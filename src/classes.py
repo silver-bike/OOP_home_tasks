@@ -35,8 +35,10 @@ product_3 = Product('IMac', 'an Apple computer', 1999.50, 5)
 product_4 = Product('IMac', 'an Apple planchet', 449.50, 15)
 category_1 = Category("Apple devises", "Some devises from Apple", [product_1, product_2, product_3, product_4])
 
+
 product_5 = Product('Phone', 'a phone', 99.50, 120)
 product_6 = Product('Player', 'a media player', 49.50, 210)
 product_7 = Product('PC', 'a computer', 1999.50, 5)
 product_8 = Product('planchet', 'a planchet', 99.50, 150)
 category_2 = Category("Devises", "Some devises from Apple", [product_5, product_6, product_7, product_8])
+
