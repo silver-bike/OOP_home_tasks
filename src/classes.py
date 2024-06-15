@@ -11,9 +11,9 @@ class Category:
         self.name = name
         self.description = description
         self.product = product
-        self.category_num += 1
-        self.product_set.update(set(self.product))
-        self.product_num = len(Category.product_set)
+        Category.category_num += 1
+        Category.product_set.update(set(self.product))
+        Category.product_num = len(Category.product_set)
 
 
 class Product:
