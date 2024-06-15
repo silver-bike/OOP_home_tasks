@@ -11,9 +11,9 @@ class Category:
         self.name = name
         self.description = description
         self.product = product
-        Category.category_num += 1
-        Category.product_set.update(set(self.product))
-        Category.product_num = len(Category.product_set)
+        self.category_num += 1
+        self.product_set.update(set(self.product))
+        self.product_num = len(Category.product_set)
 
 
 class Product:
@@ -41,4 +41,5 @@ product_6 = Product('Player', 'a media player', 49.50, 210)
 product_7 = Product('PC', 'a computer', 1999.50, 5)
 product_8 = Product('planchet', 'a planchet', 99.50, 150)
 category_2 = Category("Devises", "Some devises from Apple", [product_5, product_6, product_7, product_8])
+
 
