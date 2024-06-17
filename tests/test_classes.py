@@ -14,4 +14,4 @@ def test_class_product():
 
 
 def test_class_category():
-    assert type(Category("Apple", "devices from Apple", [])) == Category
+    assert type(Category("APPLE", "devices from Apple", [])) == Category
