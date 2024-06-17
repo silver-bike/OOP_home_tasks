@@ -34,7 +34,7 @@ class Product:
     name: str
     description: str
     price: float
-    quantity: int
+    quality: int
 
     def __init__(self, name, description, price, quantity):
         self.name = name
@@ -43,7 +43,7 @@ class Product:
         self.quantity = quantity
 
     def __str__(self):
-        return f'{self.name} - {self.description} price:{self.price}    '
+        return f'{self.name} - {self.description}    price: {self.price}   {self.quantity} шт.'
 
     @classmethod
     def new_product(cls, name, description, price, quantity):
@@ -86,5 +86,4 @@ print(product_11.price_)
 
 product_11.price_ = 3.88
 
-print(product_11.price_)
 print(product_11)
