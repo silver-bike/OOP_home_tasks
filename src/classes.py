@@ -1,3 +1,24 @@
+class Category_listing:
+
+    def __init__(self, category):
+        self.category = category
+
+    def __iter__(self):
+        self.index = -1
+
+    def __next__(self):
+        if self.index + 1 < len(self.category):
+            self.index += 1
+        else:
+            raise StopIteration
+
+    # def __getitem__(self, index):
+    #     if 0 <= index < len(self.category):
+    #         return self.category[index]
+    #     else:
+    #         raise IndexError
+
+
 class Category:
     name: str
     description: str
@@ -34,6 +55,12 @@ class Category:
 
     def __str__(self):
         return f'{self.name}, количество продуктов: {len(self)} шт.'
+
+    # def __getitem__(self, index):
+    #     if 0 <= index < len(self.__product):
+    #         return self.__product[index]
+    #     else:
+    #         raise IndexError
 
 
 class Product:
@@ -95,3 +122,6 @@ product_11.price_ = 3.88
 print(product_11)
 print(category_1)
 print(product_5 + product_5)
+
+# lst = Category_listing(category_2)
+# [print(product) for product in Category_listing(category_2)]
