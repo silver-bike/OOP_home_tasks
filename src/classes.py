@@ -29,6 +29,12 @@ class Category:
         return [(f'{product.name}, {product.price} руб. Остаток: '
                  f'{product.quantity} шт.') for product in lst]
 
+    def __len__(self):
+        return len(self.__product)
+
+    def __str__(self):
+        return f'{self.name}, количество продуктов: {len(self)} шт.'
+
 
 class Product:
     name: str
@@ -43,7 +49,7 @@ class Product:
         self.quantity = quantity
 
     def __str__(self):
-        return f'{self.name} - {self.description}    price: {self.price}   {self.quantity} шт.'
+        return f'{self.name}, {self.price} руб. Остаток: {self.quantity} шт.'
 
     @classmethod
     def new_product(cls, name, description, price, quantity):
@@ -60,6 +66,11 @@ class Product:
         else:
             print('введена некорректная цена')
 
+    def __add__(self, other):
+        return self.price * self.quantity + other.price * other.quantity
+
+
+# код для проверки
 
 product_1 = Product('Iphone', 'an Apple phone', 599.50, 20)
 product_2 = Product('Ipod', 'an Apple media player', 249.50, 10)
@@ -77,13 +88,10 @@ category_2 = Category("Devises", "Some devises from Apple",
 
 print(Category.category_num)
 print(Category.product_num)
-
 [print(x) for x in category_2.show_products_in_stock]
-
 product_11 = Product.new_product('кубик рубика', 'головоломка', 9.50, 10)
-
 print(product_11.price_)
-
 product_11.price_ = 3.88
-
 print(product_11)
+print(category_1)
+print(product_5 + product_5)
