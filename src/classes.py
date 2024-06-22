@@ -36,6 +36,7 @@ class Category:
         return f'{self.name}, количество продуктов: {len(self)} шт.'
 
 
+
 class Product:
     name: str
     description: str
