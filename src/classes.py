@@ -68,7 +68,9 @@ class Product:
             print('введена некорректная цена')
 
     def __add__(self, other):
-        return self.price * self.quantity + other.price * other.quantity
+        if type(self) == type(other):
+            return self.price * self.quantity + other.price * other.quantity
+        raise TypeError("продукты из разных категорий")
 
 
 class Smartphone(Product):
@@ -102,6 +104,9 @@ product_8 = Product('planchet', 'a planchet', "Black", 99.50, 150)
 category_2 = Category("Devises", "Some devises from Apple",
                       [product_5, product_6, product_7, product_8])
 
+smartphone_1 = Smartphone('smartphone', 'smart phone', "Black", 599.50, 20, 1024, "Nokia", 128)
+smartphone_2 = Smartphone('smartphone', 'smart phone', "White", 599.50, 20, 2048, "Samsung", 256)
+
 print(Category.category_num)
 print(Category.product_num)
 [print(x) for x in category_2.show_products_in_stock]
@@ -111,3 +116,4 @@ product_11.price_ = 3.88
 print(product_11)
 print(category_1)
 print(product_5 + product_5)
+print(smartphone_1 + product_5)
